@@ -1,11 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+//JSX 
+import 'bootstrap/dist/css/bootstrap.css'
+//
+import 'jquery/dist/jquery'
+import 'popper.js/dist/popper'
+import 'bootstrap/dist/js/bootstrap'
+import App from './App'
+import {render} from 'react-dom'
 
-ReactDOM.render(
-
-  <App />
-  ,
-  document.getElementById('root')
-);
+render(<App/>,document.querySelector('#root'))
