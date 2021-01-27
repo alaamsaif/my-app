@@ -1,0 +1,34 @@
+{
+    "students": [
+        {
+            "id": 1,
+            "name": "alaa saif",
+            "email":"alaa@gmail.com",
+            "phone": "01001313289"
+        },
+        {
+            "id": 2,
+            "name": "ahmed mohammed",
+            "email":"ahmed@gmail.com",
+            "phone": "01001313289"
+        },
+        {
+            "id": 3,
+            "name": "mohammed ahmed",
+            "email":"mohammed@gmail.com",
+            "phone": "01001313289"
+        },
+        {
+            "id": 4,
+            "name": "asmaa mohammed",
+            "email":"asmaa@gmail.com",
+            "phone": "01001313289"
+        },
+        {
+            "id": 5,
+            "name": "hana mohammed",
+            "email":"hana@gmail.com",
+            "phone": "01001313289"
+        }      
+    ]
+}
