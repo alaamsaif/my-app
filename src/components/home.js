@@ -39,10 +39,14 @@ const Home = ({ history, addStudent }) => {
         if (boolname) {
             document.getElementById("namevalidation").className = "invisible";
             setnameIsValid(true)
-            if (nameIsValid == true && ageIsValid == true && phoneIsValid == true)
+            if (ageIsValid == true && phoneIsValid == true && emailIsValid == true)
                 setisDisable(false)
+           
+
+
         }
         else {
+            setisDisable(true)
             document.getElementById("namevalidation").className = "visible alert alert-danger"
         }
 
@@ -56,7 +60,7 @@ const Home = ({ history, addStudent }) => {
         else {
             document.getElementById("agevalidation").className = "invisible"
             setageIsValid(true)
-            if (nameIsValid == true && ageIsValid == true && phoneIsValid == true)
+            if (nameIsValid == true && phoneIsValid == true && emailIsValid == true)
                 setisDisable(false)
         }
     }
@@ -68,11 +72,32 @@ const Home = ({ history, addStudent }) => {
         if (bool) {
             document.getElementById("phonevalidation").className = "invisible";
             setphoneIsValid(true)
-            if (nameIsValid == true && ageIsValid == true && phoneIsValid == true)
+            if (nameIsValid == true && ageIsValid == true && emailIsValid == true){
                 setisDisable(false)
+            }
+
+
         }
         else {
+            setisDisable(true)
             document.getElementById("phonevalidation").className = "visible alert alert-danger"
+        }
+
+    }
+    const ValidateEmail = () => {
+        var emailregx = new RegExp(/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)$/, "ig");
+        var emailtext = email.current.value;
+        var bool = emailregx.test(emailtext)
+        if (bool) {
+            document.getElementById("emailvalidation").className = "invisible";
+            setemailIsValid(true)
+            if (nameIsValid == true && ageIsValid == true && phoneIsValid == true)
+                setisDisable(false)
+
+        }
+        else {
+            setisDisable(true)
+            document.getElementById("emailvalidation").className = "visible alert alert-danger"
         }
 
     }
@@ -121,7 +146,10 @@ const Home = ({ history, addStudent }) => {
                             <div className="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
                                 <input
+                                    onBlur={ValidateEmail}
                                     required ref={email} type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                                <div id="emailvalidation" className="invisible" > please enter a valid email</div>
+
                             </div>
                         </div>
 
