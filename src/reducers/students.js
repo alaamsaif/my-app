@@ -11,10 +11,10 @@ export const students = (state={},action)=>{
             return{...state,details:action.payload}
         }
         case 'ADD_STUDENT':{
-            return{...state,details:action.payload}
+            return{...state,add:action.payload}
         }
         case 'DELETE_STUDENT':{
-            return{...state,details:action.payload}
+            return{...state,delete:action.payload}
         }
     }
 
