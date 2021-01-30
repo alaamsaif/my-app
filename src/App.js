@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 import reducers from './reducers'
 import promiseMW from 'redux-promise';
+
 const createStoreWithMW = applyMiddleware(promiseMW)(createStore)
 
 function App() {

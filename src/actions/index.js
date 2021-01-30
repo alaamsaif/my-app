@@ -1,5 +1,6 @@
+import axios from 'axios'
 const URL = "http://localhost:3001/students";
-export const getAllStudent = async () => {
+export const getAllStudents = async () => {
     let payload;
     try {
         let response = await fetch(`${URL}`);
@@ -40,7 +41,7 @@ export const clearStudentDetails = () => {
 export const addStudent = async (student) => {
     let payload = student;
     try {
-        axios.post(`${URL}`, {student})
+        axios.post(`${URL}`, student)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
